@@ -1,0 +1,22 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: chicago-traffic-ingest
+  labels:
+    name: chicago-traffic-ingest
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            name: chicago-traffic-ingest
+        spec:
+          containers:
+          - name: chicago-traffic-ingest
+            image: gcr.io/[PROJECT-ID]/btc-price-ingest:latest
+            env:
+            - name: PROJECT_ID
+              value: [PROJECT-ID]
+          restartPolicy: OnFailure
