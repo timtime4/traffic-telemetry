@@ -21,4 +21,4 @@ spec:
               value: traffic-telemetry-proto
             - name: PUBSUB_TOPIC
               value: projects/traffic-telemetry-proto/topics/chicago-traffic
-          restartPolicy: OnFailure
+          restartPolicy: Never

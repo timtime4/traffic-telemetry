@@ -2,6 +2,7 @@ import urllib2
 import requests
 import json
 import os
+import base64
 
 import utils
 
@@ -13,8 +14,9 @@ def publish(pubsub_topic, data_lines):
     """Publish to the given pubsub topic."""
     messages = []
     for line in data_lines:
-        pub = base64.urlsafe_b64encode(line)
-        messages.append({'data': pub})
+        #print line
+        #pub = base64.urlsafe_b64encode(line)
+        messages.append({'data': line})
     body = {'messages': messages}
     client = utils.create_pubsub_client(utils.get_credentials())
     resp = client.projects().topics().publish(
