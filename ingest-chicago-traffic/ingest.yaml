@@ -15,8 +15,10 @@ spec:
         spec:
           containers:
           - name: chicago-traffic-ingest
-            image: gcr.io/[PROJECT-ID]/btc-price-ingest:latest
+            image: gcr.io/traffic-telemetry-proto/chicago-traffic-ingest:latest
             env:
             - name: PROJECT_ID
-              value: [PROJECT-ID]
+              value: traffic-telemetry-proto
+            - name: PUBSUB_TOPIC
+              value: projects/traffic-telemetry-proto/topics/chicago-traffic
           restartPolicy: OnFailure

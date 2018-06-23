@@ -1,33 +1,43 @@
-import pandas as pd
-from sodapy import Socrata
-import time
-import datetime
+import urllib2
+import requests
 import json
-import utils
 import os
 
+import utils
+
+PUBSUB_TOPIC = os.environ['PUBSUB_TOPIC']
+
+NUM_RETRIES = 3
+
+def publish(pubsub_topic, data_lines):
+    """Publish to the given pubsub topic."""
+    messages = []
+    for line in data_lines:
+        pub = base64.urlsafe_b64encode(line)
+        messages.append({'data': pub})
+    body = {'messages': messages}
+    client = utils.create_pubsub_client(utils.get_credentials())
+    resp = client.projects().topics().publish(
+            topic=pubsub_topic, body=body).execute(num_retries=NUM_RETRIES)
+    return resp
+
 def getTrafficData():
-    # Unauthenticated client only works with public data sets. Note 'None'
-    # in place of application token, and no username or password:
-    client = Socrata("data.cityofchicago.org", None)
-
-    # Example authenticated client (needed for non-public datasets):
-    # client = Socrata(data.cityofchicago.org,
-    #                  MyAppToken,
-    #                  userame="user@example.com",
-    #                  password="AFakePassword")
-
-    # First 2000 results, returned as JSON from API / converted to Python list of
-    # dictionaries by sodapy.
-    results = client.get("8v9j-bter", limit=2000)
-    print results
-
-    # Convert to pandas DataFrame
-    # results_df = pd.DataFrame.from_records(result_list)
+    url = "https://data.cityofchicago.org/resource/sxs8-h27x.json"
+    req = urllib2.Request(url)
+    traffic = urllib2.urlopen(req).read()
+    # ts = time.time()
+    # st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    traffic_json = json.loads(traffic)
+    publish(PUBSUB_TOPIC, traffic_json)
+    # btc_json = ticker_json['USDT_BTC']
+    # btc_json['timestamp'] = st
+    print 'Made it to this point!'
+    return traffic_json
 
 if __name__ == '__main__':
-    credentials = utils.get_credentials()
-    bigquery = utils.create_bigquery_client(credentials)
-    ticker = getTicker()
-    response = utils.bq_data_insert_row(bigquery, os.environ['PROJECT_ID'], os.environ['BQ_DATASET'], os.environ['BQ_TABLE'], ticker)
-    print response
+    # credentials = utils.get_credentials()
+    # bigquery = utils.create_bigquery_client(credentials)
+    traffic = getTrafficData()
+    print traffic[0]
+    # response = utils.bq_data_insert_row(bigquery, os.environ['PROJECT_ID'], os.environ['BQ_DATASET'], os.environ['BQ_TABLE'], ticker)
+    # print response
