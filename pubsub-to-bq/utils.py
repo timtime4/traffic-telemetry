@@ -61,7 +61,7 @@ def cleanup(data):
         for k, v in data.items():
             if (k == 'street' or k == 'street_heading' or k == 'speed' or k == 'comments' or k == 'direction' or k == 'segment_id' or k == 'length'):
                 newdict[k] = v
-            elif k == 'street_heading':
+            elif k == 'to_street':
                 newdict['to_st'] = v
             elif k == 'from_street':
                 newdict['from_st'] = v

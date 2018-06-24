@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: bigquery-controller
-        image: gcr.io/traffic-telemetry-proto/chicago-traffic-ingest:latest
+        image: gcr.io/traffic-telemetry-proto/bigquery-controller:latest
         env:
         - name: PROCESSINGSCRIPT
           value: pubsub-to-bigquery

@@ -5,7 +5,7 @@ metadata:
   labels:
     name: chicago-traffic-ingest
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/15 * * * *"
   jobTemplate:
     spec:
       template:
