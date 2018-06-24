@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "traffic-telemetry-proto",
+  "private_key_id": "cb5e5f99d577c136a46b48ce2949aad5909a70db",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCg+4+gI7UH45Ra\nriRCbfpwC3VQKtngnw+DV5HLcNDweZURlsa0pd+CMj0nv0r9lZ2XPNo6W5Lr556u\nkWO9gG4IoTdK6EA3ELYncxssz6h7hFsmwB34evHHmpsT6EbYP0iMM8pZ1A7YprmP\nl0Te9q8dcxf/ZH5ADs2JMjSh0ldouGZebuPLN3tLIevFTYGiBDpDfs/2n091gjtL\nPD0Et1t86h6wOFx95YkB0MFNzWbMdGMIyKvWHovugkTmEcmFIXa2GlbW2f1e894K\n7y+G8Olz3v2xmQqiLJC3/3WUJlLuQ/6/lUdVPY+zICFm+CKdw05OC6dN71nkSs6t\nbnkXPKoPAgMBAAECggEAG+14bb40FkHHh3HFjZa5xz1dpUJB2SOPE+iZvPL99HIL\nR+lh4I4UN+iSTnZzwol1tPqUG2KumulsUHmdlY8Vx758Mq0XEtZ921svQDdoUcFU\n9OSIboaZsliihbIatEJKSjRj6vCMgM5vy7bg9lNSbuf8JkzfUCqhQqdolRhCHML2\nWypvI55qA9l5XZM8xTBxpPi7BX9jBr3ACwEgUZ97M+wkS07b5wMyr6UvqAM2gesj\nuoGmGtxfG9/WR8TNhzWpFcIV9KmJFZ7k2xu3tqpiwKZikfTCl5wwlXa5FwI8ezzl\nfqbNFA0P3fE5gKhMqarqx3HJ/svEtwo8FkCp2wr1cQKBgQDRTZOmmJMfh7i57ICG\nnsHivPdDqpNQ4C8c5aOf1BYW8VVyB6NKvUD3aF4dZY3GNAVsk99G6bdlhcun1GdM\nfTnT5VC/DbbxIxvQJsSHw7HtyZEUR9jBzRUgpxUd50SMQwvrg1Zv56PbG0GLTT4X\nIq6Qlg2HtaFxgG0/haqnzdi9PwKBgQDE5iXFzbMr1M4Y12E+PK6u5vhPazvuaeVH\nBZ3DU7zMRrIFCVTtO9yKPXXDZFP4bcudRBlUP/Y1Y13t5oLug16BLY0WKiBc32dI\nD/K0xL26yJMTv1nYWs9bw5wYywkImO1fLpgI9Mv/ZH8M8dInFiwL910NyFZLfS+v\nUf0eiSZPMQKBgFYWnoCLiRgS7vwqNsMoUX89UkbWxjkhvL8aBS8cQOm24fpBAf0f\n0rTwjKVyu9mmVATQ3amBQBnV6mphhwuDBmINlCTBM1oDotD+4R8mcuznV3EMDC/K\ndsIzdxARq7Q1b5WzM75bfJ4Gm/L8FmnVrg9yaKZFIt5YgJb8F7FljZxpAoGBAK7v\n1/GFT8IKoU361gAIxB7LQSS2npm1ZiqSt9daJ6zKxtGot9bKz6fW8TE3i092pWhF\nn8d1yJcogMSkgAHPoABfazGdHgHFzyp8WOP4xKUWHW53HSkXjZH3GlIA2jbUQFnH\nuPaEIFb5f9QNaeymS14aWYesTddmEx7OVnhx3CKRAoGAZsRI5aErx/stYBy/Nb37\nLWCdUmv8KLQYHXKUwp5z3XxFrFCaL6udPvex7St2nfxZC0QpthX6DSw0t2vY7cph\nSzF7RVKQvNb+J1ymr8Y21uvgWxo8jLlck4zWD3GvB4tqITFinxzZEZScWixkslFJ\n1bFBtj1plcJQZ2GE6VYb+C4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "chicago-traffic-ingest@traffic-telemetry-proto.iam.gserviceaccount.com",
+  "client_id": "110399903839582997103",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/chicago-traffic-ingest%40traffic-telemetry-proto.iam.gserviceaccount.com"
+}
