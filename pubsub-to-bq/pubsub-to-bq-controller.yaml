@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: bigquery-controller
+  labels:
+    name: bigquery-controller
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name: bigquery-controller
+    spec:
+      containers:
+      - name: bigquery-controller
+        image: gcr.io/traffic-telemetry-proto/bigquery-controller:latest
+        env:
+        - name: PROCESSINGSCRIPT
+          value: pubsub-to-bigquery
+        # Change this to your pubsub topic
+        - name: PUBSUB_TOPIC
+          value: projects/traffic-telemetry-proto/topics/chicago-traffic
+        # Change this to your project ID.
+        - name: PROJECT_ID
+          value: traffic-telemetry-proto
+        # Change the following two settings to your dataset and table.
+        - name: BQ_DATASET
+          value: traffic_telemetry
+        - name: BQ_TABLE
+          value: chicago_traffic_historical

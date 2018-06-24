@@ -14,9 +14,10 @@ def publish(pubsub_topic, data_lines):
     """Publish to the given pubsub topic."""
     messages = []
     for line in data_lines:
-        #print line
-        #pub = base64.urlsafe_b64encode(line)
-        messages.append({'data': line})
+        
+        pub = base64.urlsafe_b64encode(str(line))
+        messages.append({'data': pub})
+    
     body = {'messages': messages}
     client = utils.create_pubsub_client(utils.get_credentials())
     resp = client.projects().topics().publish(
@@ -30,10 +31,10 @@ def getTrafficData():
     # ts = time.time()
     # st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
     traffic_json = json.loads(traffic)
-    publish(PUBSUB_TOPIC, traffic_json)
+    pub_sub_resp = publish(PUBSUB_TOPIC, traffic_json)
     # btc_json = ticker_json['USDT_BTC']
     # btc_json['timestamp'] = st
-    print 'Made it to this point!'
+    print 'Made it to this point! ' + str(pub_sub_resp)
     return traffic_json
 
 if __name__ == '__main__':
