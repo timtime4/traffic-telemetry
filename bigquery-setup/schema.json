@@ -1,0 +1,72 @@
+[
+  {
+    "name": "segment_id",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "street",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "direction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "from_st",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "to_st",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "length",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "street_heading",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "comments",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+    {
+    "name": "start_long",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+    {
+    "name": "start_lat",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+    {
+    "name": "end_long",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+   {
+    "name": "end_lat",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+   {
+    "name": "speed",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+   {
+    "name": "last_updated",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  }
+]
